@@ -1,0 +1,71 @@
+name: flutter_boilerplate
+description: A production-ready Flutter boilerplate for e-commerce applications.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management, Routing & DI
+  get: ^4.6.6
+
+  # Network
+  dio: ^5.4.0
+  connectivity_plus: ^6.0.3
+
+  # Storage
+  shared_preferences: ^2.2.2
+  get_storage: ^2.1.1
+
+  # UI
+  cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.9
+  shimmer: ^3.0.0
+  google_fonts: ^6.1.0
+  flutter_screenutil: ^5.9.1
+  carousel_slider: ^5.0.0
+  flutter_staggered_animations: ^1.1.1
+  badges: ^3.1.2
+  flutter_rating_bar: ^4.0.1
+
+  # Utils
+  intl: ^0.20.2
+  url_launcher: ^6.2.2
+  share_plus: ^7.2.1
+  logger: ^2.0.2+1
+
+  # Icons
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
+
+  # Fonts are loaded via Google Fonts package in theme configuration.
+  # To use bundled fonts, download Poppins from https://fonts.google.com
+  # and add them to assets/fonts/, then uncomment below:
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/Poppins-Regular.ttf
+  #       - asset: assets/fonts/Poppins-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/Poppins-SemiBold.ttf
+  #         weight: 600
+  #       - asset: assets/fonts/Poppins-Bold.ttf
+  #         weight: 700
