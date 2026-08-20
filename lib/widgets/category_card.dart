@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:shimmer/shimmer.dart';
-
+import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/core/constants/color_constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CategoryCard extends StatelessWidget {
   final String? imageUrl;
@@ -32,7 +31,7 @@ class CategoryCard extends StatelessWidget {
         children: [
           Container(
             width: 64.w,
-            height: 64.w,
+            height: 62.w,
             decoration: BoxDecoration(
               color: effectiveColor.withValues(alpha: 0.1),
               shape: BoxShape.circle,

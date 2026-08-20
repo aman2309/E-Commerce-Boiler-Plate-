@@ -67,9 +67,8 @@ class CartView extends StatelessWidget {
             ),
           ),
           SizedBox(width: 8.w),
-          Obx(() {
-            if (controller.itemCount == 0) return const SizedBox.shrink();
-            return Container(
+          if (controller.itemCount > 0)
+            Container(
               padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
               decoration: BoxDecoration(
                 color: ColorConstants.accentOrange,
@@ -83,8 +82,7 @@ class CartView extends StatelessWidget {
                   color: ColorConstants.white,
                 ),
               ),
-            );
-          }),
+            ),
         ],
       ),
       centerTitle: false,
@@ -174,7 +172,11 @@ class CartView extends StatelessWidget {
                 ],
               ),
             ),
-            onDismissed: (_) => controller.removeItem(index),
+            onDismissed: (_) {
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                controller.removeItem(index);
+              });
+            },
             child: _buildCartItemCard(item, index, controller),
           );
         }),
@@ -639,19 +641,19 @@ class CartView extends StatelessWidget {
                       color: ColorConstants.textTertiary,
                     ),
                   ),
-                  Obx(() => Text(
-                        '\$${controller.total.toStringAsFixed(2)}',
-                        style: TextStyle(
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w800,
-                          color: ColorConstants.textPrimary,
-                        ),
-                      )),
+                  Text(
+                    '\$${controller.total.toStringAsFixed(2)}',
+                    style: TextStyle(
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w800,
+                      color: ColorConstants.textPrimary,
+                    ),
+                  ),
                 ],
               ),
               SizedBox(width: 16.w),
               Expanded(
-                child: Obx(() => ElevatedButton(
+                child: ElevatedButton(
                       onPressed: controller.cartItems.isNotEmpty
                           ? () => Get.toNamed(AppRoutes.checkout)
                           : null,
@@ -680,7 +682,7 @@ class CartView extends StatelessWidget {
                           Icon(Icons.arrow_forward_rounded, size: 18.w, color: ColorConstants.white),
                         ],
                       ),
-                    )),
+                    ),
               ),
             ],
           ),

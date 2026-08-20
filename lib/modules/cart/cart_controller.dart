@@ -130,7 +130,11 @@ class CartController extends GetxController {
       final item = cartItems[index];
       final wishlistController = Get.find<WishlistController>();
       wishlistController.addToWishlist(item);
-      removeItem(index);
+      cartItems.removeAt(index);
+      _calculateTax();
+      _calculateDeliveryCharge();
+      _recalculateDiscount();
+      updateCartCount();
       Get.snackbar(
         'Moved',
         'Item moved to wishlist',
@@ -204,7 +208,5 @@ class CartController extends GetxController {
     updateCartCount();
   }
 
-  void updateCartCount() {
-    Get.forceAppUpdate();
-  }
+  void updateCartCount() {}
 }

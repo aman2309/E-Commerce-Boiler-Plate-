@@ -109,7 +109,7 @@ class HomeView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Hello, Aman \uD83D\uDC4B',
+                    'Hello, Aman',
                     style: TextStyle(
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w700,

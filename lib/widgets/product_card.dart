@@ -1,9 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/core/constants/color_constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
-
-import 'package:flutter_boilerplate/core/constants/color_constants.dart';
 
 class ProductCard extends StatelessWidget {
   final String? imageUrl;
@@ -128,15 +127,15 @@ class ProductCard extends StatelessWidget {
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
-                              color: ColorConstants.black.withValues(alpha: 0.1),
+                              color: ColorConstants.black.withValues(
+                                alpha: 0.1,
+                              ),
                               blurRadius: 4,
                             ),
                           ],
                         ),
                         child: Icon(
-                          isWishlisted
-                              ? Icons.favorite
-                              : Icons.favorite_border,
+                          isWishlisted ? Icons.favorite : Icons.favorite_border,
                           color: isWishlisted
                               ? ColorConstants.error
                               : ColorConstants.grey500,
@@ -151,7 +150,7 @@ class ProductCard extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Padding(
-                padding: EdgeInsets.all(8.w),
+                padding: EdgeInsets.all(3.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

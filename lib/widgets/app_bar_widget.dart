@@ -33,7 +33,8 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    final effectiveLeading = leading ??
+    final effectiveLeading =
+        leading ??
         (showBack
             ? IconButton(
                 icon: Icon(
@@ -50,7 +51,8 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       title: title != null
           ? Text(
               title!,
-              style: style ??
+              style:
+                  style ??
                   theme.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.onSurface,
@@ -62,8 +64,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       actions: actions,
       backgroundColor: backgroundColor ?? theme.colorScheme.surface,
       elevation: elevation ?? 0,
-      scrolledUnderElevation: 0.5,
-      systemOverlayStyle: systemOverlayStyle ??
+      scrolledUnderElevation: 0,
+      systemOverlayStyle:
+          systemOverlayStyle ??
           SystemUiOverlayStyle(
             statusBarBrightness: theme.brightness,
             statusBarIconBrightness: theme.brightness == Brightness.dark
